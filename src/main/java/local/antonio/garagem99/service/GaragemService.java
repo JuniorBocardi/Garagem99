@@ -4,6 +4,7 @@
  */
 package local.antonio.garagem99.service;
 
+import jakarta.persistence.Id;
 import java.util.List;
 import local.antonio.garagem99.entities.Veiculos;
 import local.antonio.garagem99.repositories.GaragemRepository;
@@ -23,6 +24,11 @@ public class GaragemService {
     public List <Veiculos> findAll() {
         
         List<Veiculos> result = garagemRepository.findAll();
+        return result;
+    }
+    
+    public List<Veiculos>findById(long id) {
+        List<Veiculos> result = garagemRepository.findById(id);
         return result;
     }
     

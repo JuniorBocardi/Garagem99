@@ -9,6 +9,7 @@ import local.antonio.garagem99.entities.Veiculos;
 import local.antonio.garagem99.service.GaragemService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -24,6 +25,12 @@ public class GaragemController {
     @GetMapping ("/forsale")
     public List<Veiculos> findAll() {
         List<Veiculos> result = garagemService.findAll();
+        return result;
+    }
+    
+    @GetMapping ("/forsale/{id}")
+    public List<Veiculos> findById(@PathVariable long id) {
+        List<Veiculos> result = garagemService.findById(id);
         return result;
     }
     
